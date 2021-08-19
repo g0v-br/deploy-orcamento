@@ -1,0 +1,16 @@
+diff --git a/src/components/overview/BubbleChart/BubbleChart.js b/src/components/overview/BubbleChart/BubbleChart.js
+index 19d77bb..c597bbf 100644
+--- a/src/components/overview/BubbleChart/BubbleChart.js
++++ b/src/components/overview/BubbleChart/BubbleChart.js
+@@ -203,7 +203,10 @@ export default class BubbleChart {
+             });
+ 
+         const charge = (d) => {
+-            return -Math.pow(radiusScale(d.amount) * radiusChangeRate, 2.0) * this.forceStrength;
++            const r = d.partitions[activePartitionId] == "default"
++                ? 0
++                : radiusScale(d.amount) * radiusChangeRate;
++            return -Math.pow(r, 2.0) * this.forceStrength;
+         }
+ 
+         this.simulation.force("charge", forceManyBody().strength(charge)).stop()

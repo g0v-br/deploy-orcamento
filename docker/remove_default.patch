@@ -1,0 +1,85 @@
+diff --git a/src/components/overview/BubbleChart/BubbleChart.js b/src/components/overview/BubbleChart/BubbleChart.js
+index 8cd45fe..19d77bb 100644
+--- a/src/components/overview/BubbleChart/BubbleChart.js
++++ b/src/components/overview/BubbleChart/BubbleChart.js
+@@ -6,6 +6,7 @@ import { transition } from "d3-transition";
+ import { rgb } from "d3-color";
+ import { scaleLinear, scaleThreshold, scalePow } from "d3-scale";
+ import { forceSimulation, forceManyBody, forceX, forceY } from "d3-force";
++import { subset } from "d3";
+ 
+ 
+ function getCenters(gridBlocks) {
+@@ -158,7 +159,7 @@ export default class BubbleChart {
+     }
+ 
+     // Update bubbles radius and update the simulation obj with the new charge force according to the new radius
+-    updateSimulation(radiusUpdate = true) {
++    updateSimulation(radiusUpdate = true, activePartitionId) {
+         const maxAmount = this.nodes[0].amount;
+         const radiusScale = scalePow().exponent(0.5)
+             .domain([0, maxAmount]).range([2, 100]);
+@@ -191,12 +192,14 @@ export default class BubbleChart {
+                 return radiusScale(d.amount) * radiusChangeRate * 3;
+             });
+ 
+-        // Update radius
++        // Update radius and hide bubbles belonging to default subset
+         select("svg#vis")
+             .selectAll("circle").transition()
+             .duration(2000)
+             .attr("r", function (d) {
+-                return radiusScale(d.amount) * radiusChangeRate;
++                return d.partitions[activePartitionId] == "default"
++                    ? 0
++                    : radiusScale(d.amount) * radiusChangeRate;
+             });
+ 
+         const charge = (d) => {
+@@ -221,14 +224,13 @@ export default class BubbleChart {
+             subsets.forEach((subset, i) => {
+                 subsetToCenterMap[subset.id] = centers[i];
+             });
+-
+             this.simulation.force(
+                 "x",
+                 forceX()
+                     .strength(this.forceStrength)
+                     .x(function (d) {
+                         let targetSubset = d.partitions[activePartitionId];
+-                        if (targetSubset) {
++                        if (targetSubset && targetSubset != "default") {
+                             return subsetToCenterMap[targetSubset].x;
+                         } else {
+                             return centers[centers.length - 1].x;
+@@ -241,14 +243,15 @@ export default class BubbleChart {
+                     .strength(this.forceStrength)
+                     .y(function (d) {
+                         let targetSubset = d.partitions[activePartitionId];
+-                        if (targetSubset) {
++                        if (targetSubset && targetSubset != "default") {
+                             return subsetToCenterMap[targetSubset].y;
+                         } else {
+                             return centers[centers.length - 1].y;
+                         }
+                     })
+             );
+-            this.updateSimulation(false)
++
++            this.updateSimulation(false, activePartitionId)
+             this.simulation.alpha(1).restart();
+ 
+         }
+diff --git a/src/services/overviewService.js b/src/services/overviewService.js
+index 44225a4..02839b4 100644
+--- a/src/services/overviewService.js
++++ b/src/services/overviewService.js
+@@ -160,8 +160,6 @@ export default function () {
+                         formattedString: "" /* Stringa da stampare direttamente nell'interfaccia */
+                     };
+                 });
+-            subsets.push(this.getDefautSubset(partition));
+-            // console.lo(subsets);
+             return subsets;
+ 
+         },
