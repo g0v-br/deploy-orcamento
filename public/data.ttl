@@ -16,9 +16,10 @@
 
 :domain # a bgo:Domain ;
     bgo:title "Observatório do Orçamento da Cidade de São Paulo" ;
-    bgo:description "Os dados utilizados nessa visualização foram importados do site oficial da Secretaria da Fazenda do Governo Municipal de São Paulo." ;
+    bgo:description "A Lei Orçamentária Anual (LOA) no ano de 2020 é de R$ 71,9 Bi. Os dados utilizados nessa visualização foram importados do site oficial da Secretaria da Fazenda do Governo Municipal de São Paulo. O g0v Sampa é uma plataforma que permite o cidadão paulistano acompanhar como o orçamento do município tem sido distribuído entre educação, saúde, cultura e outras destinações ao longo dos anos e quais atividades e projetos as secretarias, subprefeituras e demais órgãos da administração pública têm realizado com os recursos orçados. (Todos os dados e informações sobre o orçamento expostos no site são extraídos dos relatórios anuais de Execução Orçamentária elaborados pela Secretaria da Fazenda)." ;
     bgo:abstract
 """
+## **Sobre o Observatório:**
 
 """^^bgo:MDString ;
 

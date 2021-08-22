@@ -22,14 +22,13 @@
           @input="onSearchInput"
         ></v-text-field>
       </div>
-
       <div class="meta">
-        <p class="meta-description">{{metadata.description}}</p>
-        {{totalizer(total,totalFiltered)}}
-        <StringFormatter class="meta-abstract" :string="metadata.abstract" />
+      <StringFormatter class="meta-abstract" :string="metadata.abstract" />
+        <p class="meta-description" align="justify">{{metadata.description}}</p>
       </div>
 
-      <div ref="chart" class="chart">
+      <div ref="chart" class="chart" style="text-align: center">
+      <span align="center" style="font-size: 25px">{{totalizer(total,totalFiltered)}}</span>
         <BubbleChart
           :active-partition="activePartition"
           :search="search_chart"
