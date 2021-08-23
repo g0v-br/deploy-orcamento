@@ -89,9 +89,9 @@ export const getTotalizer = (subject, predicate) => {
 			lessThanMinFormat: store.anyValue(totalizer, ns.bgo("lessThanMinFormat")) || "%s"
 		}
 
-		return (total, filteredTotal, search = "") => {
+		return (total, filteredTotal, search) => {
 			let formattedTotal;
-			if (search == "" && total == filteredTotal) {
+			if (!search && total == filteredTotal) {
 				formattedTotal = formatNumber(total, {
 					...options,
 					format: format

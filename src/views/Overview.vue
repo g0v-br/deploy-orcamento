@@ -142,7 +142,7 @@ export default {
       partitions: null,
       criteria: null,
       tags: [],
-      search: "",
+      search: null,
       search_chart: "",
       metadata: {},
       legendData: {},
