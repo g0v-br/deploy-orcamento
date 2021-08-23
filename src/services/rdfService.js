@@ -20,7 +20,7 @@ export function getDefaultMenuItems(parent) {
 						icon: store.anyValue(element, ns.bgo("icon")) || "",
 						path: path.value,
 						external: path.termType == "NamedNode",
-						target: path.termType == "NamedNode"? "_blank" : "_self"
+						target: path.termType == "NamedNode" ? "_blank" : "_self"
 					});
 				}
 			});
@@ -32,7 +32,7 @@ export function getDefaultMenuItems(parent) {
 
 
 const formatNumber = (number, options) => {
-	// console.lo('number', number);
+	// console.log('number:', number);
 	let formattedAmount, res;
 	if (isFinite(number)) {
 		number = number * options.scaleFactor;
@@ -89,9 +89,9 @@ export const getTotalizer = (subject, predicate) => {
 			lessThanMinFormat: store.anyValue(totalizer, ns.bgo("lessThanMinFormat")) || "%s"
 		}
 
-		return (total, filteredTotal) => {
+		return (total, filteredTotal, search = "") => {
 			let formattedTotal;
-			if (total == filteredTotal) {
+			if (search == "" && total == filteredTotal) {
 				formattedTotal = formatNumber(total, {
 					...options,
 					format: format

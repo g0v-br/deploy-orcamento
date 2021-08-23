@@ -1,15 +1,25 @@
 <template>
   <div class="container-fluid">
     <!-- partitioned is used to remove the side content -->
-    <div :class="{'content-grid':true, 'partitioned': activePartition.id != 'overview'}">
+    <div
+      :class="{
+        'content-grid': true,
+        partitioned: activePartition.id != 'overview',
+      }"
+    >
       <div class="partitions">
-        <v-btn-toggle v-model="activePartition.id" mandatory active-class="primary--text">
+        <v-btn-toggle
+          v-model="activePartition.id"
+          mandatory
+          active-class="primary--text"
+        >
           <v-btn
             v-for="partition in partitions"
             :key="partition.id"
             :value="partition.id"
             @click="onPartitionChange(partition.id)"
-          >{{partition.label}}</v-btn>
+            >{{ partition.label }}</v-btn
+          >
         </v-btn-toggle>
       </div>
       <div class="search">
@@ -23,14 +33,30 @@
         ></v-text-field>
       </div>
       <div class="meta">
-      <StringFormatter class="meta-abstract" align="justify":string="metadata.abstract" />
-        <p class="meta-description" align="justify"><br />{{metadata.description}}</p>
-        <p class="meta-description" align="justify">Os valores das despesas orçamentárias de um determinado ano são estabelecidos no fim do ano anterior pela Lei Orçamentária Anual (LOA), a partir da estimativa das receitas que serão obtidas durante o exercício em questão. <br /> <br /> Os dados e informações aqui apresentados podem ser encontrados nos relatórios de Execução Orçamentária elaborados pela Secretaria da Fazenda.
-</p>
+        <StringFormatter
+          class="meta-abstract"
+          align="justify"
+          :string="metadata.abstract"
+        />
+        <p class="meta-description" align="justify">
+          <br />{{ metadata.description }}
+        </p>
+        <p class="meta-description" align="justify">
+          Os valores das despesas orçamentárias de um determinado ano são
+          estabelecidos no fim do ano anterior pela Lei Orçamentária Anual
+          (LOA), a partir da estimativa das receitas que serão obtidas durante o
+          exercício em questão. <br />
+          <br />
+          Os dados e informações aqui apresentados podem ser encontrados nos
+          relatórios de Execução Orçamentária elaborados pela Secretaria da
+          Fazenda.
+        </p>
       </div>
 
       <div ref="chart" class="chart" style="text-align: center">
-      <span align="center" style="font-size: 25px">{{totalizer(total,totalFiltered)}}</span>
+        <span v-if="activePartition.id == 'overview'" align="center" style="font-size: 25px">{{
+          totalizer(total, totalFiltered)
+        }}</span>
         <BubbleChart
           :active-partition="activePartition"
           :search="search_chart"
@@ -46,7 +72,10 @@
           :amountFormatter="formatters.formatTooltipAmount"
           :rateFormatter="formatters.formatTooltipPercentage"
           :node="hoveredNode"
-          :style="{top: hoveredNode.top+'px', left:hoveredNode.left+'px'}"
+          :style="{
+            top: hoveredNode.top + 'px',
+            left: hoveredNode.left + 'px',
+          }"
           class="tooltip"
         />
       </div>
@@ -56,12 +85,15 @@
           <router-link
             v-for="tag in tags"
             :key="tag.label"
-            :to="{ name: 'accounts-partition',
-          params: { partitionId: activePartition.id },
-          query: { s: tag.label }}"
-            :style="{fontSize: tag.weight *1.4 +0.5 +'em'}"
+            :to="{
+              name: 'accounts-partition',
+              params: { partitionId: activePartition.id },
+              query: { s: tag.label },
+            }"
+            :style="{ fontSize: tag.weight * 1.4 + 0.5 + 'em' }"
             class="tag"
-          >{{tag.label}}</router-link>
+            >{{ tag.label }}</router-link
+          >
         </div>
         <Legend
           :label="legendData.title"
@@ -84,7 +116,6 @@ import Tooltip from "@/components/overview/Tooltip";
 import StringFormatter from "@/components/StringFormatter.vue";
 import debounce from "lodash/debounce";
 
-
 const OverviewService = ServiceFactory.get("overview");
 let debouncedSearch;
 
@@ -94,13 +125,13 @@ export default {
     BubbleChart,
     Legend,
     Tooltip,
-    StringFormatter
+    StringFormatter,
   },
   props: {
     partitionId: {
       type: String,
-      default: "overview"
-    }
+      default: "overview",
+    },
   },
   data() {
     return {
@@ -111,7 +142,7 @@ export default {
       partitions: null,
       criteria: null,
       tags: [],
-      search: null,
+      search: "",
       search_chart: "",
       metadata: {},
       legendData: {},
@@ -122,13 +153,13 @@ export default {
       totalFiltered: 0,
       //
       isNodeHovered: false,
-      hoveredNode: {}
+      hoveredNode: {},
     };
   },
 
   beforeRouteUpdate(to, from, next) {
     // Necessary when the component  si reused after a tag is cliked
-    this.activePartition = this.partitions.find(partition => {
+    this.activePartition = this.partitions.find((partition) => {
       //serve perche quando navigo col menu non chiamo onPartitionChange
       return partition.id == to.params.partitionId;
     });
@@ -143,13 +174,13 @@ export default {
     this.legendData = OverviewService.getLegendData();
     this.metadata = OverviewService.getMetadata();
     this.formatters = OverviewService.getFormatters();
-    this.accounts = OverviewService.getAccounts().map(account => ({
+    this.accounts = OverviewService.getAccounts().map((account) => ({
       ...account,
-      active: true
+      active: true,
     }));
     this.criteria = OverviewService.getCriteria();
     this.search = this.$route.query.s || "";
-    this.activePartition = this.partitions.find(partition => {
+    this.activePartition = this.partitions.find((partition) => {
       return partition.id == this.partitionId;
     });
 
@@ -157,7 +188,7 @@ export default {
     // this.partitions[1].subsets[0].resetTotals();
 
     //wait that user finish to write search string
-    debouncedSearch = debounce(newVal => {
+    debouncedSearch = debounce((newVal) => {
       this.updateAccounts();
       this.search_chart = newVal;
     }, 200);
@@ -166,9 +197,9 @@ export default {
     // this.updateAccounts();
   },
   watch: {
-    search: function(newVal, oldVal) {
+    search: function (newVal, oldVal) {
       debouncedSearch(newVal);
-    }
+    },
     // deep: true
   },
 
@@ -177,7 +208,7 @@ export default {
     //each time search string change
     updateAccounts() {
       this.resetTotal();
-      this.accounts.forEach(account => {
+      this.accounts.forEach((account) => {
         account.active = this.match(account, this.search);
         this.updateTotals(account);
       });
@@ -190,7 +221,7 @@ export default {
       this.$router.push({
         name: "accounts-partition",
         params: { partitionId },
-        query: { s: this.search }
+        query: { s: this.search },
       });
     },
     onSearchInput() {
@@ -198,7 +229,7 @@ export default {
       this.$router.replace({
         name: "accounts-partition",
         params: { partitionId: this.activePartition.id },
-        query: { s: this.search }
+        query: { s: this.search },
       });
     },
     //tooltip
@@ -220,7 +251,7 @@ export default {
       }
       this.hoveredNode = Object.assign({}, this.hoveredNode, node, {
         top,
-        left
+        left,
       });
       this.isNodeHovered = true;
     },
@@ -234,8 +265,8 @@ export default {
         this.totalFiltered += account.amount;
       }
       // Aggiorno i totali di tutte le partizioni e subset diversi dal primo ( overview )
-      this.partitions.slice(1).forEach(partition => {
-        partition.subsets.forEach(subset => {
+      this.partitions.slice(1).forEach((partition) => {
+        partition.subsets.forEach((subset) => {
           if (account.partitions[partition.id] == subset.id) {
             subset.count += 1;
             subset.amountTotal += account.amount;
@@ -254,8 +285,8 @@ export default {
       this.total = 0;
       this.totalFiltered = 0;
 
-      this.partitions.slice(1).forEach(partition => {
-        partition.subsets.forEach(subset => {
+      this.partitions.slice(1).forEach((partition) => {
+        partition.subsets.forEach((subset) => {
           subset.count = 0;
           subset.amountTotal = 0;
           subset.referenceAmountTotal = 0;
@@ -267,7 +298,7 @@ export default {
     },
 
     sortSubsets() {
-      this.partitions.slice(1).forEach(partition => {
+      this.partitions.slice(1).forEach((partition) => {
         const sortOrder =
           partition.sortOrder == this.criteria["ascending_sort"] ? 1 : -1;
 
@@ -347,8 +378,8 @@ export default {
     },
 
     makeFormattedStringForPartitions() {
-      this.partitions.slice(1).forEach(partition => {
-        partition.subsets.forEach(subset => {
+      this.partitions.slice(1).forEach((partition) => {
+        partition.subsets.forEach((subset) => {
           switch (partition.groupFunction) {
             case this.criteria["AccountsCount"]:
               subset.formattedString = partition.totalizer(
@@ -359,8 +390,10 @@ export default {
             case this.criteria["AmountsSum"]:
               subset.formattedString = partition.totalizer(
                 subset.amountTotal,
-                subset.amountTotal_filtered
+                subset.amountTotal_filtered,
+                this.search
               );
+              console.log(`amountTotal: ${subset.amountTotal}, amountTotal_filtered: ${subset.amountTotal_filtered}`);
               break;
             case this.criteria["TrendAverage"]:
               subset.formattedString = partition.formatPercentage(
@@ -368,11 +401,13 @@ export default {
                   subset.referenceAmountTotal_filtered) /
                   subset.referenceAmountTotal_filtered
               );
+
               break;
 
             default:
               break;
           }
+
         });
       });
     },
@@ -384,8 +419,8 @@ export default {
         account.description.toLowerCase().includes(text) ||
         account.abstract.toLowerCase().includes(text)
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
