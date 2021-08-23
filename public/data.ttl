@@ -16,10 +16,11 @@
 
 :domain # a bgo:Domain ;
     bgo:title "Observatório do Orçamento da Cidade de São Paulo" ;
-    bgo:description "A Lei Orçamentária Anual (LOA) no ano de 2020 é de R$ 71,9 Bi. Os dados utilizados nessa visualização foram importados do site oficial da Secretaria da Fazenda do Governo Municipal de São Paulo. O g0v Sampa é uma plataforma que permite o cidadão paulistano acompanhar como o orçamento do município tem sido distribuído entre educação, saúde, cultura e outras destinações ao longo dos anos e quais atividades e projetos as secretarias, subprefeituras e demais órgãos da administração pública têm realizado com os recursos orçados. (Todos os dados e informações sobre o orçamento expostos no site são extraídos dos relatórios anuais de Execução Orçamentária elaborados pela Secretaria da Fazenda)." ;
+    bgo:description "O Observatório do Orçamento de São Paulo é a mais nova e interativa ferramenta de controle das finanças públicas municipais. Foi criado para você acompanhar como o governo tem utilizado os recursos que vêm dos nossos impostos para atender às demandas da cidade e dos paulistanos nos últimos anos. É uma iniciativa do movimento g0v.br em parceria com o gabinete da vereadora Janaína Lima." ;
     bgo:abstract
 """
-## **Sobre o Observatório:**
+# **Bem Vindo!**
+
 
 """^^bgo:MDString ;
 
@@ -162,15 +163,14 @@
     bgo:title " " ;
     bgo:abstract
 """
-O g0v Sampa é uma plataforma que permite o cidadão paulistano acompanhar como o orçamento do município tem sido distribuído entre educação, saúde, cultura e outras destinações ao longo dos anos e quais atividades e projetos as secretarias, subprefeituras e demais órgãos da administração pública têm realizado com os recursos orçados. (Todos os dados e informações sobre o orçamento expostos no site são extraídos dos relatórios anuais de Execução Orçamentária elaborados pela Secretaria da Fazenda).
+Toda vez que você vir o número zero no lugar da letra o, lembre-se de que é possível usar a internet e o modo de pensar digital (a linguagem binária, 0 e 1) para mudar o “gov” tradicional.
 
-A criação do g0v Sampa foi inspirada num trabalho desenvolvido por integrantes do movimento taiwanês g0v (pronuncia-se “gov zero”) cujo intuito é expor abertamente o orçamento público de Taiwan a partir de diversas perspectivas (tendências temporais, comparações entre diferentes departamentos, opinião pública e detalhamento da composição das receitas) a fim de equipar os cidadãos com um instrumento de monitoramento das atividades realizadas pelo governo do país com o dinheiro dos impostos e outros tributos. Embora o g0v Sampa não possua nenhuma relação com o movimento g0v, compartilha o propósito de usar a tecnologia em favor do interesse público, fortalecendo o compromisso com a transparência e criando soluções inteligentes que estimulem a participação dos cidadãos.
-            
-É verdade que os paulistanos já dispõem de uma plataforma digital onde podem acessar livremente informações sobre o orçamento da cidade. Conforme o Decreto Municipal nº 53.623/12, que regulamenta a Lei de Acesso à Informação (Lei Federal 12.527/11), a Prefeitura de São Paulo criou em 2012 o Portal da Transparência – SP, para ser o principal veículo de disponibilização ativa de dados e informações públicas acerca da administração municipal. Porém o Portal é deficiente na comunicação com o cidadão comum, pois exige certa familiaridade com termos mais técnicos presentes nas informações prestadas e se vale de mecanismos de busca e recursos visuais que tornam a exibição de conteúdo pouco intuitiva e interativa (em vista do que é possível criar como alternativa). Essa deficiência pode ser tratada com atualizações do Portal, e qualquer pessoa pode entrar em contato com os gestores para enviar sugestões de melhorias. No entanto, não existe uma agenda de atualizações divulgada, nem é possível saber se as sugestões enviadas pelos usuários realmente passam por análise.
-            
-Ao contrário do Portal da Transparência – SP, o g0v Sampa não está sob as mãos do Estado e, portanto, sua gestão, além de não exigir o uso de recursos públicos (seja dinheiro, seja o trabalho de funcionários públicos) nem estar sujeita a influências de natureza política ou eleitoral, consegue ser mais ágil na manutenção da plataforma (o processo que vai do surgimento de uma nova ideia de melhoria ou de adição de conteúdos novos até a sua efetiva implementação a partir de uma atualização pode acontecer mais rápida e frequentemente) e flexível em sua organização interna, que é aberta a indivíduos e entidades da sociedade civil que queiram se tornar apoiadores, colaboradores, parceiros etc. Além disso, há sempre a possibilidade de desenvolvedores e quaisquer cidadãos que queiram contribuir enviarem sugestões de novos conteúdos para serem exibidos na plataforma ou até dicas para melhorar a qualidade da própria exibição. Todas essas contribuições serão atentamente consideradas.
-            
-O que dá lugar ao g0v Sampa não é a carência de um portal de divulgação de dados públicos transparente, mas um portal que, além de transparente, constantemente procura facilitar a busca e a localização de informações públicas com o uso de recursos de exibição intuitivos e interativos e um layout agradável ao usuário, pois é assim que irá incentivar o engajamento cívico dos paulistanos e ampliar a sua capacidade de supervisionar o governo e avaliar se o uso das dezenas de milhões de reais arrecadadas todos os anos tem servido adequadamente a cidade. 
+Inspirados pelo g0v original, de Taiwan, com o qual, porém, não possuímos nenhum vínculo oficial, somos um movimento político, mas sem partido ou ideologia; defendemos a transparência dos governos e buscamos soluções inteligentes que facilitem e incentivem a participação popular nos assuntos da política, provendo os cidadãos de informações e poder para moldar a sociedade.
+O g0v.br é uma organização da sociedade civil que reúne pessoas dispostas a pôr a tecnologia a serviço do interesse público, desenvolvendo ferramentas que ampliem a capacidade dos brasileiros de monitorar as atividades realizadas pelo Estado -- em todas as suas esferas e poderes --, a fim de que, cada vez mais, o uso dos recursos públicos efetivamente atenda, e com eficiência, às necessidades e demandas da nação.
+
+É uma comunidade livre e descentralizada, feita de pessoas que chegam com ideias novas e encontram outras pessoas dispostas a pôr essas ideias em prática. Todos os nossos projetos utilizam softwares open source e são desenvolvidos com trabalho voluntário. É de cidadãos para o bem público. 
+Se você quer se tornar um apoiador ou parceiro do g0v.br, ou mesmo fazer parte desta comunidade, pode contribuir com seu trabalho, suas ideias, seu tempo, seu apoio financeiro. Saiba que a porta estará sempre aberta!
+
           
 """^^bgo:MDString.
 

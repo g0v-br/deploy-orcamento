@@ -23,8 +23,10 @@
         ></v-text-field>
       </div>
       <div class="meta">
-      <StringFormatter class="meta-abstract" :string="metadata.abstract" />
-        <p class="meta-description" align="justify">{{metadata.description}}</p>
+      <StringFormatter class="meta-abstract" align="justify":string="metadata.abstract" />
+        <p class="meta-description" align="justify"><br />{{metadata.description}}</p>
+        <p class="meta-description" align="justify">Os valores das despesas orçamentárias de um determinado ano são estabelecidos no fim do ano anterior pela Lei Orçamentária Anual (LOA), a partir da estimativa das receitas que serão obtidas durante o exercício em questão. <br /> <br /> Os dados e informações aqui apresentados podem ser encontrados nos relatórios de Execução Orçamentária elaborados pela Secretaria da Fazenda.
+</p>
       </div>
 
       <div ref="chart" class="chart" style="text-align: center">

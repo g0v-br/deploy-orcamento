@@ -18,7 +18,7 @@
     <p class="title">
       Voluntário de Orçamento do Gabinete da Vereadora Janaína Lima  </p>
                             <p class="email"><a href="mailto:gustavodias@uchicago.edu">gustavodias@uchicago.edu</a></p>
-                          <p>Gustavo is a rising second-year at the College, intending to major in Economics with a minor in Geographic Information Science. His work as a research assistant focuses on analyzing travel times trade-offs between different modes of transportation in Chicago.</p>                      </div>
+                          <p>Gustavo é um jovem paulistano de 20 anos. Ele cursa graduação em Economia e Ciência de Dados Geográficos na <br />Universidade de Chicago. Já foi assistente de pesquisa no Center for Spatial Data Science e redator no US COVID Atlas. <br />Atualmente, Gustavo é colaborador da RadicalxChange Foundation e voluntário no gabinete da vereadora Janaína Lima.</p>                      </div>
                           <br /> 
       <div class="column-width-2"> 
               </div>
@@ -42,7 +42,7 @@
     <p class="title">
       Assessora Parlamentar do Gabinete da Vereadora Janaína Lima    </p>
                             <p class="email"><a href="mailto:lucilene.oshiro@gmail.com ">lucilene.oshiro@gmail.com </a></p>
-                          <p>Lucilene é pós-graduada em contabilidade pública e servidora concursada da Prefeitura de São Paulo desde 2010. Trabalhou na Secretaria da Fazenda nas áreas do tesouro municipal, <br /> planejamento e orçamento e, também, assessoria econômica.  Foi Coordenadora do Orçamento e, posteriormente, Subsecretária de Planejamento e Orçamento. Participou de conselhos <br /> fiscais em empresas do município de SP e grupos de trabalho visando a eficiência do gasto público. Atualmente é assessora parlamentar na Câmara Municipal de SP.</p>                      </div>
+                          <p>Pós-graduada em Contabilidade Pública e servidora concursada da Prefeitura de São Paulo desde 2010, trabalhou na Secretaria da Fazenda nas áreas do Tesouro Municipal, <br />Planejamento e Orçamento e Assessoria Econômica. Foi Coordenadora do Orçamento e, posteriormente, Subsecretária de Planejamento e Orçamento. Participou de conselhos <br />fiscais em empresas do município de São Paulo e grupos de trabalho visando à eficiência do gasto público. Atualmente é assessora parlamentar da vereadora Janaína Lima <br />na Câmara Municipal de SP.</p>                      </div>
       <div class="column-width-2"> 
               </div>
       <hr />
