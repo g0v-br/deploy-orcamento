@@ -1,3 +1,3 @@
 (function (window) {
-    window.__dereferencingRules = [{ "regexp": ".*", "targets": ["http://localhost:8080/data.ttl"], "isLast": true }] ;
+    window.__dereferencingRules = [{ "regexp": ".*", "targets": ["https://thirsty-euler-279ffa.netlify.app/data.ttl"], "isLast": true }] ;
 }(this));
