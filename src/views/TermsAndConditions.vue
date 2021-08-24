@@ -3,7 +3,6 @@
   <div class="directory-entry">
       <div class="column-width-5">
   <img class="img-responsive lazy" src="g0v.png" alt="" style="float:left;margin:0px 10px"/>  
-                  
                     
     <p class="title">
                           <p>Toda vez que você vir o número zero no lugar da letra o, lembre-se de que é possível usar a internet e o modo de pensar digital (a linguagem binária, 0 e 1) para mudar o “gov” tradicional. <br />
