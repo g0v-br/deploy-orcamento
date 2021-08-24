@@ -2,6 +2,7 @@
   <div class="container">
   <div class="directory-entry">
       <div class="column-width-5">
+  <br />  <br /> 
   <img class="img-responsive lazy" src="preview.png" alt="" style="float:left;margin:0px 10px"/>  
                     
     <p class="title">
@@ -11,7 +12,7 @@ O g0v.br é uma organização da sociedade civil que reúne pessoas dispostas a 
 É uma comunidade livre e descentralizada, feita de pessoas que chegam com ideias novas e encontram outras pessoas dispostas a pôr essas ideias em prática. Todos os nossos projetos utilizam softwares open source e são desenvolvidos com trabalho voluntário. É de cidadãos para o bem público. <br /> <br /> 
 Se você quer se tornar um apoiador ou parceiro do g0v.br, ou mesmo fazer parte desta comunidade, pode contribuir com seu trabalho, suas ideias, seu tempo, seu apoio financeiro. Saiba que a porta estará sempre aberta!
 </p>                      </div>
-                          <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br /> 
+                          <br />  <br />  <br />  <br />  <br />  <br />  <br /> 
       <div class="column-width-2"> 
               </div>
       <hr />
