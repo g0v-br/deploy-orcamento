@@ -3,7 +3,7 @@
   <div class="directory-entry">
       <div class="column-width-5">
   <br />  <br /> 
-  <img class="img-responsive lazy" src="preview.png" alt="" style="float:left;margin:10px 10px"/>  
+  <img class="img-responsive lazy" src="preview.png" alt="" style="float:left;margin:0px 25px"/>  
                     
     <p class="title">
                           <p><br />  <br /> <br />  <br />Toda vez que você vir o número zero no lugar da letra o, lembre-se de que é possível usar a internet e o modo de pensar digital (a linguagem binária, 0 e 1) para mudar o “gov” tradicional. <br />
@@ -19,7 +19,7 @@ Se você quer se tornar um apoiador ou parceiro do g0v.br, ou mesmo fazer parte 
     </div>
   <div class="directory-entry">
       <div class="column-width-5">
-  <img class="img-responsive lazy" src="g0v.png" alt="" style="float:left;margin:0px 20px"/>  
+  <img class="img-responsive lazy" src="g0v.png" alt="" style="float:left;margin:0px 0px"/>  
                     
     <p class="title">
                           <p><br />  <br /> <br />  <br />Toda vez que você vir o número zero no lugar da letra o, lembre-se de que é possível usar a internet e o modo de pensar digital (a linguagem binária, 0 e 1) para mudar o “gov” tradicional. <br /> <br />
